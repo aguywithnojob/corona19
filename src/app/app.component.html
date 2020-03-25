@@ -10,40 +10,41 @@
   </div>
 
 <div class="container">
+  <div class="row" style="text-align: center; margin: auto;">
+    <div class="col-md-3 col-6">
+      <div class="record confirmed">
+        <h3>CONFIRMED</h3>
+        <h4></h4>
+        <h1>{{total_stat.confirmed}}</h1>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="record active">
+        <h3>ACTIVE</h3>
+        <h4></h4>
+        <h1>{{total_stat.active}}</h1>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="record deaths">
+        <h3>DEATHS</h3>
+        <h4></h4>
+        <h1>{{total_stat.deaths}}</h1>
+      </div>
+    </div>
+    <div class="col-md-3 col-6">
+    <div class="record recovered">
+      <h3>RECOVERED</h3>
+      <h4></h4>
+      <h1>{{total_stat.recovered}}</h1>
+    </div>
+    </div>
+  
+      
+  </div>
   <div class="row">
     
-    <div class="row" style="text-align: center; margin: auto;">
-      <div class="col-md-3 col-6">
-        <div class="record confirmed">
-          <h3>CONFIRMED</h3>
-          <h4></h4>
-          <h1>{{total_stat.confirmed}}</h1>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="record active">
-          <h3>ACTIVE</h3>
-          <h4></h4>
-          <h1>{{total_stat.active}}</h1>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="record deaths">
-          <h3>DEATHS</h3>
-          <h4></h4>
-          <h1>{{total_stat.deaths}}</h1>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-      <div class="record recovered">
-        <h3>RECOVERED</h3>
-        <h4></h4>
-        <h1>{{total_stat.recovered}}</h1>
-      </div>
-      </div>
     
-        
-    </div>
     <div class="col-md-8">
       <h4 class="state-heading" style=" font-family: 'Libre Baskerville', serif;">Record by States</h4>
       <div>
@@ -75,7 +76,7 @@
       <div class="col-md-12">
         <form #searchform="ngForm" (ngSubmit)="search_stat_country(searchform.value)">
           <div class="form">
-            <input type="text" name="country" id="country" placeholder="Enter Country name..." [(ngModel)]="country" required>
+            <input type="text" name="country" id="country" required placeholder="Enter Country name..." ngModel >
             <input type = "submit" value = "search">
           </div>
           
@@ -144,8 +145,11 @@
       </div>
       
     </div>
-    <div class="col-md-8 my-2" style="margin: auto;">
+    <div class="col-md-6  my-2" style="margin: auto;">
       <iframe width="100%"  src="https://www.youtube.com/embed/S78s_DAh0Xc" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-6 my-2 poster-img">
+      <img src="assets/poster5.jpg" alt="">
     </div>
   </div>
 </div>
