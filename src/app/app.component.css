@@ -1,0 +1,155 @@
+.container-fluid{
+    margin: 0px;
+}
+.header img{
+    width: 100%;
+    height: 240px;
+}
+.header .helpline-nu{
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    font-family: 'Libre Baskerville', serif;
+}
+.graph-heading h2{
+     
+    display: block;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+hr.path-break{
+    border: 1px solid teal;
+    width: 30%;
+}
+.record{
+    
+    text-align: center;
+    
+}
+.record h1{
+    font-family: 'Baloo Da 2', cursive;
+    
+}
+.record h3{
+    font-family: 'Libre Baskerville', serif;
+    font-size: large;
+}
+.record-time {
+    margin-bottom:5px;
+}
+.record-time h6{
+    font-family: 'Libre Baskerville', serif;
+   
+}
+
+.record-time h6 span{
+    color: orangered ;
+}
+.confirmed{
+    color: #ff073a;
+}
+.active{
+    color: #007bff;
+}
+.recovered{
+    color:#28a745;
+}
+.deaths{
+    color: #6c757d;
+}
+
+.poster-img img{
+    width: 100%;
+}
+.poster-heading{
+    font-family: 'Libre Baskerville', serif;
+   text-align: center;
+}
+.link-heading{
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+.link-span{
+    font-family: 'Libre Baskerville', serif;
+}
+.county-name,.search-heading{
+    font-family: 'Libre Baskerville', serif;
+}
+.link{
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+li a{
+    background-color: #ffcccb;
+}
+ul {
+    list-style-type: square;
+}
+iframe{
+    height:500px;
+}
+
+.form input[type='text']{
+    width: 80%;
+    outline:none;
+    margin-right: 5px;
+    padding: 5px;
+}
+.form input[type="submit"]{
+    padding: 7px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+.form input[type="submit"]:hover{
+    
+    background-color: blue;
+}
+.crd{
+    text-align: center;    
+}
+
+#footer{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#footer{
+    font-family: 'Baloo Da 2', cursive;
+    background-color: #d1e2ff ;
+    color:#007cdd;
+}
+
+/* font-family: 'Baloo Da 2', cursive;
+font-family: 'Crete Round', serif;                bold */
+
+
+@media only screen and (max-width: 570px) {
+    .header img{
+        width: 100%;
+        height: 140px;
+    }
+    .helpline-nu{
+        font-size: 14px;
+    }
+    .graph-header{
+        font-size: 20px;
+    }
+    iframe{
+        height: 350px;
+    }
+    .link-span{
+        font-size: 13px;
+    }
+    li a{
+        font-size: 13px;
+    }
+}
