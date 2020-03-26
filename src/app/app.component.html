@@ -46,7 +46,7 @@
   <div class="row">
     <div class="col-md-6 my-2" >
       <h4 class="state-heading" style=" font-family: 'Libre Baskerville', serif;">Record by States</h4>
-      <div style="overflow: scroll;">
+      <div class="table-data">
         <table>
           <tr>
             <th>STATE</th>
@@ -72,7 +72,7 @@
       
     </div>
     <div class="col-md-6 my-2">
-      <div class="head-scrol" style="overflow:scroll;">
+      <div class="head-scrol">
         <h5 class="headline-heading">Lastest Headlines</h5>
         <ul *ngFor=" let item of headline; index as i;">
           <li><a target="_blank" href="{{item.url}}">{{item.title}}</a></li>

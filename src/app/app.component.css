@@ -215,6 +215,10 @@ font-family: 'Crete Round', serif;                bold */
     }
     .head-scrol{
         height: 300px;
+        overflow: scroll;
+    }
+    .table-data{
+        overflow: scroll;
     }
     sup {
         top: -0.1em;
