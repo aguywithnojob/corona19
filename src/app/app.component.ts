@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
         }
         else{
           this.statewise_stat.push(item)
-          console.log(this.statewise_stat)
+          // console.log(this.statewise_stat)
         }
     });
     
