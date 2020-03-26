@@ -17,14 +17,21 @@ export class AppComponent implements OnInit {
       'X-RapidAPI-Key': this.key
     })
   }
+
+  
   stat:any;
   total_stat={
     active: '',
     confirmed: '',
     deaths: '',
     lastupdatedtime: '',
-    recovered: ''
-    
+    recovered: '',
+    delta: {
+      active: '',
+      confirmed: '',
+      deaths: '',
+      recovered: ''
+    }
   };
   statewise_stat = [];
   headline=[];
@@ -32,21 +39,7 @@ export class AppComponent implements OnInit {
   country_stat={
     name:'',total_cases:'',total_deaths:'',total_recovered:'',active_cases:'',serious_critical:''
   };
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-
-  public barChartLabels = []; //statename
-  public barChartType = 'bar';
-  public barChartLegend = true;
-
-  public barChartData = [
-    {data: [], label: 'confirmed'},
-    {data: [], label: 'active'},
-    {data: [], label: 'deaths'},
-
-  ];
+  
 
   
 
@@ -73,41 +66,30 @@ export class AppComponent implements OnInit {
           this.total_stat.recovered = item.recovered;
           this.total_stat.deaths = item.deaths;
           this.total_stat.lastupdatedtime = item.lastupdatedtime;
-          
+          this.total_stat.delta.active = item.delta.active;
+          this.total_stat.delta.deaths = item.delta.deaths;
+          this.total_stat.delta.confirmed = item.delta.confirmed;
+          this.total_stat.delta.recovered = item.delta.recovered;
         }
         else{
           this.statewise_stat.push(item)
+          console.log(this.statewise_stat)
         }
     });
-    this.get_graph()
+    
    },err=>{console.log('err',err)}) 
   }
 
 
-   
-
-  get_graph(){
-    // console.log(this.statewise_stat)
-    this.statewise_stat.forEach(item=>{
-      if(item.active != '0' && item.confirmed != '0'){
-        this.barChartLabels.push(item.state);
-      this.barChartData[0].data.push(parseInt(item.confirmed));
-      this.barChartData[1].data.push(parseInt(item.active));
-      this.barChartData[2].data.push(parseInt(item.deaths));
-      }
-      
-    })
-  }
-
 
   get_top_headline(){
-    this._http.get('http://newsapi.org/v2/top-headlines?q=corona&country=in&apiKey=79ae714b41d2438383ef83d4da1e51fe')
+    this._http.get('https://newsapi.org/v2/top-headlines?q=corona&country=in&apiKey=79ae714b41d2438383ef83d4da1e51fe')
     .subscribe(res=>{
       // console.log(res['articles']);
       res['articles'].forEach((item,index) => {
-         if(index <= 4){
+         
           this.headline.push(item)
-         } 
+         
           
       });
       // console.log(this.headline)
@@ -138,6 +120,7 @@ export class AppComponent implements OnInit {
         this.country_stat.active_cases = this.total_stat.active;
         this.country_stat.total_deaths = this.total_stat.deaths;
         this.country_stat.total_recovered = this.total_stat.recovered;
+        
       }
       else{
         this.country_stat.name = tmp[0].country_name;

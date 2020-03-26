@@ -11,65 +11,80 @@
 
 <div class="container">
   <div class="row" style="text-align: center; margin: auto;">
+    
     <div class="col-md-3 col-6">
       <div class="record confirmed">
         <h3>CONFIRMED</h3>
         <h4></h4>
-        <h1>{{total_stat.confirmed}}</h1>
+        <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.confirmed != '0'">[+ {{total_stat.delta.confirmed}}]</sup> {{total_stat.confirmed}}</h1>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="record active">
         <h3>ACTIVE</h3>
         <h4></h4>
-        <h1>{{total_stat.active}}</h1>
+        <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.active != '0'">[+ {{total_stat.delta.active}}]</sup> {{total_stat.active}}</h1>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="record deaths">
         <h3>DEATHS</h3>
         <h4></h4>
-        <h1>{{total_stat.deaths}}</h1>
+        <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.deaths != '0'">[+ {{total_stat.delta.deaths}}]</sup> {{total_stat.deaths}}</h1>
       </div>
     </div>
     <div class="col-md-3 col-6">
     <div class="record recovered">
       <h3>RECOVERED</h3>
       <h4></h4>
-      <h1>{{total_stat.recovered}}</h1>
+      <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.recovered != '0'">[+ {{total_stat.delta.recovered}]</sup> {{total_stat.recovered}}</h1>
     </div>
     </div>
   
       
   </div>
   <div class="row">
-    
-    
-    <div class="col-md-8">
+    <div class="col-md-6 my-2" >
       <h4 class="state-heading" style=" font-family: 'Libre Baskerville', serif;">Record by States</h4>
-      <div>
-        <div style="display: block">
-          <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
-                [options]="barChartOptions"
-                [legend]="barChartLegend"
-                [chartType]="barChartType"></canvas>
-        </div>
+      <div style="overflow: scroll;">
+        <table>
+          <tr>
+            <th>STATE</th>
+            <th>CONFIRMED</th>
+            <th>ACTIVE</th>
+            <th>DEATHS</th>
+            <th>RECOVERED</th>
+            
+          </tr>
+          <tr *ngFor="let item of statewise_stat">
+            <td *ngIf="item.active != '0' && item.confirmed != '0'">{{item.state}}</td>
+            <td *ngIf="item.active != '0' && item.confirmed != '0'">{{item.confirmed}}</td>
+            <td *ngIf="item.active != '0' && item.confirmed != '0'">{{item.active}}</td>
+            <td *ngIf="item.active != '0' && item.confirmed != '0' && item.deaths != '0'">{{item.deaths}}</td>
+            <td *ngIf="item.active != '0' && item.confirmed != '0' && item.deaths == '0'">-</td>
+            <td *ngIf="item.active != '0' && item.confirmed != '0' && item.recovered != '0'">{{item.recovered}}</td>
+            <td *ngIf="item.active != '0' && item.confirmed != '0' && item.recovered == '0'">-</td>
+          </tr>
+          
+        </table>
       </div>
+      
+      
     </div>
-    <div class="col-md-4">
-      <h5 class="headline-heading">Lastest Headlines</h5>
-      <div class="headline">
+    <div class="col-md-6 my-2">
+      <div class="head-scrol" style="overflow:scroll;">
+        <h5 class="headline-heading">Lastest Headlines</h5>
         <ul *ngFor=" let item of headline; index as i;">
           <li><a target="_blank" href="{{item.url}}">{{item.title}}</a></li>
         </ul>
       </div>
+      
+   
     </div>
   </div>
 
 
-  <div class="container-fluid">
+  <div class="container-fluid my-3">
     <div class="row">
       <h4 class="search-heading">Get stat by country name</h4>
       
@@ -155,15 +170,23 @@
 </div>
 
 <div class="container-fluid">
-  <h3 class="link-heading">Some Useful Links:-</h3>
   <div class="row">
-    <ul class="link"> 
+    <div class="col-md-6">
+      <h5 class="link-heading">Some Useful Links:-</h5>
+      <ul class="link"> 
       
-      <li><span class="link-span">MINISTRY OF HEALTH AND FAMILY WELFARE, GOV. OF INDIA</span><br><a href="https://www.mohfw.gov.in/">HTTPS://WWW.MOHFW.GOV.IN/</a></li>
-      <li><span class="link-span">WHO : COVID-19 HOME PAGE</span><br><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">HTTPS://WWW.WHO.INT/EMERGENCIES/DISEASES/NOVEL-CORONAVIRUS-2019</a></li>
-      <li><span class="link-span">CDC</span><br><a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html">HTTPS://WWW.CDC.GOV/CORONAVIRUS/2019-NCOV/FAQ.HTML</a></li>
-      <li><span class="link-span">COVID-19 GLOBAL TRACKER</span><br><a href="https://coronavirus.thebaselab.com/">HTTPS://CORONAVIRUS.THEBASELAB.COM/</a></li>
-    </ul>
+        <li><span class="link-span">MINISTRY OF HEALTH AND FAMILY WELFARE, GOV. OF INDIA</span><br><a href="https://www.mohfw.gov.in/">HTTPS://WWW.MOHFW.GOV.IN/</a></li>
+        <li><span class="link-span">WHO : COVID-19 HOME PAGE</span><br><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">HTTPS://WWW.WHO.INT/EMERGENCIES/DISEASES/NOVEL-CORONAVIRUS-2019</a></li>
+        <li><span class="link-span">CDC</span><br><a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html">HTTPS://WWW.CDC.GOV/CORONAVIRUS/2019-NCOV/FAQ.HTML</a></li>
+        <li><span class="link-span">COVID-19 GLOBAL TRACKER</span><br><a href="https://coronavirus.thebaselab.com/">HTTPS://CORONAVIRUS.THEBASELAB.COM/</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+     
+        
+      
+    </div>
+    
   </div>
 </div>
   
