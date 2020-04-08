@@ -5,8 +5,20 @@
     width: 100%;
     height: 240px;
 }
+.head-logo{
+     background-color: #2f4066;
+     color: white;
+     
+}
+.head-log>h3{
+    margin: 0rem !important;
+}
+.app a img{
+    margin-top: -25px;
+    height: 122px;
+}
 .header .helpline-nu{
-    background-color: red;
+    background-color: tomato;
     color: white;
     text-align: center;
     padding: 2px;
@@ -85,7 +97,8 @@ hr.path-break{
     hyphens: auto;
 }
 li a{
-    background-color: #ffcccb;
+    background-color: #0f7f8f;
+    color: white;
 }
 ul {
     list-style-type: square;
@@ -142,8 +155,8 @@ table {
 }
 #footer{
     font-family: 'Baloo Da 2', cursive;
-    background-color: #d1e2ff ;
-    color:#007cdd;
+    background-color: #2f4066 ;
+    color:white;
 }
 
 /* font-family: 'Baloo Da 2', cursive;
@@ -155,6 +168,14 @@ font-family: 'Crete Round', serif;                bold */
         width: 100%;
         height: 140px;
     }
+    .app a img{
+        margin-top: -25px;
+        height: 40px;
+    }
+    .head-logo h3{
+        font-size: 12px;
+            
+       }
     .helpline-nu{
         font-size: 14px;
     }
@@ -176,11 +197,31 @@ font-family: 'Crete Round', serif;                bold */
         width: 100%;
         height: 60px;
     }
+    .header .helpline-nu{
+        font-size: 8px;
+    }
+   
+    .app a img{
+        margin-top: -15px;
+        height: 40px;
+    }
+    .head-logo h3{
+    font-size: 12px;
+        
+   }
     .helpline-nu{
         font-size: 11px;
     }
+    .graph-heading{
+        margin-top: 12px;
+    }
     .graph-header{
-        font-size: 20px;
+        font-size: 16px;
+        margin: 0px;
+    }
+    hr.path-break{
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     iframe{
         height: 200px;
@@ -224,3 +265,9 @@ font-family: 'Crete Round', serif;                bold */
         top: -0.1em;
     }
 }
+
+/* #2f4066 dark blue
+    #0f7f8f light blue
+
+    https://youtu.be/BtN-goy9VOY
+*/

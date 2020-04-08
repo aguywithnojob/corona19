@@ -1,7 +1,15 @@
 <div class="container-fluid full-back">
   <div class="header">
-    <img class="covid_header" src="assets/header.png" alt="">
+    <!-- <img class="covid_header" src="assets/header.png" alt=""> -->
+    <div class="head-logo">
+      <h3 style="margin: 0px;">NOVEL-CORONAVIRUS-2019</h3>
+    </div>
     <h5 class="helpline-nu">The Helpline Number for corona-virus : +91-11-23978046 or 1075</h5>
+    <div class="app">
+      <a href="https://www.mygov.in/aarogya-setu-app?app=aarogya&target=browser" target="_blank">
+        <img src="https://www.mygov.in/sites/all/themes/mygov/images/covid/Aarogya_banner.png" alt="">
+      </a>
+    </div>
   </div>
   
   <div class="graph-heading">
@@ -16,28 +24,28 @@
       <div class="record confirmed">
         <h3>CONFIRMED</h3>
         <h4></h4>
-        <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.confirmed != '0'">[+ {{total_stat.delta.confirmed}}]</sup> {{total_stat.confirmed}}</h1>
+        <h1> {{total_stat.confirmed}}</h1>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="record active">
         <h3>ACTIVE</h3>
         <h4></h4>
-        <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.active != '0'">[+ {{total_stat.delta.active}}]</sup> {{total_stat.active}}</h1>
+        <h1> {{total_stat.active}}</h1>
       </div>
     </div>
     <div class="col-md-3 col-6">
       <div class="record deaths">
         <h3>DEATHS</h3>
         <h4></h4>
-        <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.deaths != '0'">[+ {{total_stat.delta.deaths}}]</sup> {{total_stat.deaths}}</h1>
+        <h1> {{total_stat.deaths}}</h1>
       </div>
     </div>
     <div class="col-md-3 col-6">
     <div class="record recovered">
       <h3>RECOVERED</h3>
       <h4></h4>
-      <h1> <sup style="color: darkorange; font-size:16px; " *ngIf="total_stat.delta.recovered != '0'">[+ {{total_stat.delta.recovered}]</sup> {{total_stat.recovered}}</h1>
+      <h1> {{total_stat.recovered}}</h1>
     </div>
     </div>
   
@@ -72,8 +80,9 @@
       
     </div>
     <div class="col-md-6 my-2">
+      <h5 class="headline-heading">Lastest Headlines</h5>
       <div class="head-scrol">
-        <h5 class="headline-heading">Lastest Headlines</h5>
+        
         <ul *ngFor=" let item of headline; index as i;">
           <li><a target="_blank" href="{{item.url}}">{{item.title}}</a></li>
         </ul>
@@ -82,7 +91,7 @@
    
     </div>
   </div>
-
+  
 
   <div class="container-fluid my-3">
     <div class="row">
@@ -143,29 +152,26 @@
 </div>
 
 <div class="container-fluid py-2">
-  <h2 class="poster-heading">How to prevent ourselves?</h2>
+  <h2 class="poster-heading">Useful Information</h2>
   <hr class="path-break">
   <div class="row">
-    <div class="col-md-6 col-6 my-2">
-      <div class="poster-img">
-        <img src="assets/poster1.png" alt="">
-        <img src="assets/poster2.png" alt="">
-      </div>
-      
+    <div class="col-md-6 my-2">
+      <!-- <div class="poster-img">
+        <img src="assets/poster3.jpg" alt="">
+        <img src="assets/poster5.jpg" alt="" style="margin-top: -50px;">
+      </div> -->
+      <iframe width="100%"  src="https://www.youtube.com/embed/BtN-goy9VOY" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div class="col-md-6 col-6 my-2">
-      <div class="poster-img">
-        <img src="assets/poster3.png" alt=""><br>
+    <div class="col-md-6 my-2">
+      <!-- <div class="poster-img">
+        
         <img src="assets/poster4.jpg" alt="">
-      </div>
-      
-    </div>
-    <div class="col-md-6  my-2" style="margin: auto;">
+        
+      </div> -->
       <iframe width="100%"  src="https://www.youtube.com/embed/S78s_DAh0Xc" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div class="col-md-6 my-2 poster-img">
-      <img src="assets/poster5.jpg" alt="">
-    </div>
+    
+    
   </div>
 </div>
 

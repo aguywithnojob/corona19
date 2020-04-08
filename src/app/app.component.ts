@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,13 +26,7 @@ export class AppComponent implements OnInit {
     confirmed: '',
     deaths: '',
     lastupdatedtime: '',
-    recovered: '',
-    delta: {
-      active: '',
-      confirmed: '',
-      deaths: '',
-      recovered: ''
-    }
+    recovered: ''
   };
   statewise_stat = [];
   headline=[];
@@ -66,10 +61,7 @@ export class AppComponent implements OnInit {
           this.total_stat.recovered = item.recovered;
           this.total_stat.deaths = item.deaths;
           this.total_stat.lastupdatedtime = item.lastupdatedtime;
-          this.total_stat.delta.active = item.delta.active;
-          this.total_stat.delta.deaths = item.delta.deaths;
-          this.total_stat.delta.confirmed = item.delta.confirmed;
-          this.total_stat.delta.recovered = item.delta.recovered;
+          
         }
         else{
           this.statewise_stat.push(item)
@@ -137,5 +129,6 @@ export class AppComponent implements OnInit {
     })
   }
   
+
 
 }
